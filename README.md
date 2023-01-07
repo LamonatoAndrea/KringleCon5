@@ -129,7 +129,7 @@ Just to add a note that it exists and Eve Snowshoes told me it is at [https://my
 https://my-store-d61669.creator-spring.com/)!
 ![victors_shop](imgs/victors_shop.png)
 
-### ![inbox](imgs/inbox.png | width=10)Inbox (1)
+### Inbox (1)
 I must admit I saw that email just this year while doing the report! Really sorry for this but you deserve an
 answer and you’ll get it as soon as this report is uploaded. How’s “you”? One of the images below should
 be a hint on that, the other a response :)
