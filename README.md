@@ -98,7 +98,7 @@ Just to take a good look at the Cloud Ring recovered from previous challenges :)
 
 ### The Burning Ring of Fire
 Just to take a good look at the Burning Ring of Fire recovered from previous challenges :)
-![brof_ring](imgs/brof_ring.png)
+![brof_ring](imgs/brof.png)
 
 ## Narrative
 Five Rings for the Christmas king immersed in cold
