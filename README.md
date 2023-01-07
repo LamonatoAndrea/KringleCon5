@@ -133,5 +133,5 @@ https://my-store-d61669.creator-spring.com/)!
 I must admit I saw that email just this year while doing the report! Really sorry for this but you deserve an
 answer and you’ll get it as soon as this report is uploaded. How’s “you”? One of the images below should
 be a hint on that, the other a response :)
-![minions_bye](imgs/minons_bye.png)
+![minions_bye](imgs/minions_bye.png)
 ![missed_email](imgs/missed_email.jpeg)
