@@ -2,8 +2,18 @@
 ## Recover the Tolkien Ring
 ### Wireshark Practice
 Difficulty: :christmas_tree:
-Use the Wireshark Phishing terminal in the Tolkien Ring to solve the mysteries around the suspicious
-PCAP. Get hints for this challenge by typing hint in the upper panel of the terminal.
+
+Use the Wireshark Phishing terminal in the Tolkien Ring to solve the mysteries around the [suspicious
+PCAP](). Get hints for this challenge by typing hint in the upper panel of the terminal.
+
+### Solution
+Please note that I used both the file `suspicious.pcap`, downloaded from above URL, and `pcap_challenge.pcap`, present inside the terminal. Their `md5` hashes match and are `f0450df7d1bf6e695f80a61259083307`.
+
+#### Question 1 - What type of objects can be exported from this PCAP? - Answer: `http`
+The Wireshark “Export objects” functionality finds only HTTP exportable objects:
+![Wireshark "Export" HTTP Object list](imgs/wireshark.png)
+
+
 
 ---
 ### Windows Event Logs
