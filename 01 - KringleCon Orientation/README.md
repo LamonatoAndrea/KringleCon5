@@ -12,6 +12,7 @@
 ### Clone with a Difference
 ### Prison Escape
 ### Jolly CI/CD
+### The Elfen Ring
 ## Recover the Web Ring
 ### Naughty IP
 ### Credential Mining
@@ -19,6 +20,7 @@
 ### IMDS, XXE, and Other Abbreviations
 ### Open Boria Mine Door
 ### Glamtariel's Fountain
+### The Web Ring
 ## Recover the Cloud Ring
 ### AWS CLI Intro
 ### Trufflehog Search
@@ -28,6 +30,7 @@
 ### Blockchain Divination
 ### Exploit a Smart Contract
 ### Mistakes were made... the key
+### The Burning Ring of Fire
 ## [Narrative](/README.md#narrative)
 ## [Conclusions](/README.md#conclusions)
 ### [The Victors shop](/README.md#the-victors-shop)
