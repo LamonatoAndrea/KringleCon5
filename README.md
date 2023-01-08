@@ -1,7 +1,7 @@
 # SANS Holiday Hack Challenge 2022 - KringleCon V: Golden Rings
 
 ## Work in progress notice
-I am still porting the PDF report to GitHub, therefore it may change over time.
+I am still porting the PDF report to GitHub, therefore it may change over time (even be destroyed by errors :) ).
 The only currently "stable" release is the PDF itself (thought I already noticed minor changes I'll have to fix).
 The PDF is available here: [Lamonato Andrea - Writeup for SANS Holiday Hack Challenge 2022.pdf](https://github.com/LamonatoAndrea/KringleCon5/blob/master/Lamonato%20Andrea%20-%20Writeup%20for%20SANS%20Holiday%20Hack%20Challenge%202022.pdf).
 
@@ -35,15 +35,15 @@ Hopefully, your worst one-liner of the season:
     ➤                    ||     ||
 ```
 
-## [KringleCon Orientation]()
+## KringleCon Orientation
 
-## [Recover the Tolkien Ring]()
+## Recover the Tolkien Ring
 
-### [Wireshark Practice]()
+### Wireshark Practice
 
-### [Windows Event Logs]()
+### Windows Event Logs
 
-### [Suricata Regatta]()
+### Suricata Regatta
 
 ### The Tolkien Ring
 Just to take a good look at the Tolkien Ring recovered from previous challenges :)
