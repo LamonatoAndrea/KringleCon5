@@ -33,7 +33,9 @@ thedead@dellian:~$ for i in $(grep "TimeCreated" powershell.evtx.dump | cut -d '
 34	2022-11-01
 ```
 The hardest part in this question was realizing that `2022-12-24` was the right answer in the wrong format :smile:
+
 ![date_format](imgs/date_format.jpg)
+
 [https://devrant.com/rants/1791863/a-perfect-date-for-a-programmer](https://devrant.com/rants/1791863/a-perfect-date-for-a-programmer)
 
 ---
