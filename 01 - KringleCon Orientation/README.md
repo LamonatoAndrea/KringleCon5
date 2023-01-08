@@ -1,6 +1,7 @@
 # SANS Holiday Hack Challenge 2022 - KringleCon V: Golden Rings
 ## KringleCon Orientation
 Difficulty: :christmas_tree:
+
 Get your bearings at KringleCon  
 1. **Talk to Jingle Ringford**: Jingle will start you on your journey!
 2. **Get your badge**: Pick up your badge
