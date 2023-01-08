@@ -1,5 +1,10 @@
 # SANS Holiday Hack Challenge 2022 - KringleCon V: Golden Rings
 
+## Work in progress notice
+I am still porting the PDF report to GitHub, therefore it may change over time.
+The only currently "stable" release is the PDF itself (thought I already noticed minor changes I'll have to fix).
+The PDF is available here: ![https://github.com/LamonatoAndrea/KringleCon5/blob/master/Lamonato%20Andrea%20-%20Writeup%20for%20SANS%20Holiday%20Hack%20Challenge%202022.pdf](https://github.com/LamonatoAndrea/KringleCon5/blob/master/Lamonato%20Andrea%20-%20Writeup%20for%20SANS%20Holiday%20Hack%20Challenge%202022.pdf).
+
 ## thedead@dellian:~$ whoami
 ```bash
 thedead@dellian:~$ whoami
