@@ -14,7 +14,56 @@ The Wireshark “Export objects” functionality finds only HTTP exportable obje
 
 Interestingly enough there are 2 `app.php` files of different sizes. `Diff`ing the two files it is possible to observe a base64 encoded payload.
 
+#### Question 2 - What is the file name of the largest file we can export? - Answer: `app.php`
+Wireshark’s “Export HTTP object list” window also shows filenames.
 
+#### Question 3 - What packet number starts that app.php file? - Answer: `687`
+Wireshark’s “Export HTTP object list” window also shows the initial packet for the file download.
+
+#### Question 4 - What is the IP of the Apache server? - Answer: `192.185.57.242`
+Filter on the packet number and get the source IP:
+```bash
+elf@2c6b9deef396:~$ tshark -r pcap_challenge.pcap -T fields -e ip.src "frame.number == 687"
+192.185.57.242
+```
+
+#### Question 5 - What file is saved to the infected host? - Answer: `Ref_Sept24-2020.zip`
+By analyzing the modified `app.php` it is possible to notice that some JS code was added. This chunk of code contains a base64 encoded payload that gets decoded and downloaded with abovementioned filename:
+```js
+saveAs(blob1, 'Ref_Sept24-2020.zip');
+```
+The zip file contains a file named `Ref_Sept24-2020.scr` which is recognized by [multiple AV solutions](https://www.virustotal.com/gui/file/fad001d463e892e7844040cabdcfa8f8431c07e7ef1ffd76ffbd190f49d7693d) as being `Dridex` malware.
+
+#### Question 6 - Attackers used bad TLS certificates in this traffic. Which countries were they registered to? - Answer: `Irelan, Israel, South Sudan`
+It is possible to extract all the countries with `tshark` and some commands:
+```bash
+elf@2c6b9deef396:~$ tshark -r pcap_challenge.pcap -V | grep "DNSequence item: 1 item (id-at-countryName=" | cut -d = -f 2 | cut -d ")" -f1 | sort | uniq
+IE
+IL
+SS
+US
+```
+These four countries map to: IE ➤ Ireland, IL ➤ Israel, SS ➤ South Sudan, US ➤ United States. At this
+point it is enough to order them excluding the pretty obvious “United States” from the list.
+
+#### Question 7 - Is the host infected (Yes/No)? - Answer: `Yes`
+It is possible to observe that after the malicious content is retrieved, the host does a connection to `adv.epostoday.uk` which is a [known Dridex IOC](https://github.com/Esox-Lucius/PiHoleblocklists/blob/main/Dridex%20IOCs%20-%20Domains%20%26%20Hosts):
+```bash
+elf@2c6b9deef396:~$ tshark -r pcap_challenge.pcap -V "frame.number > 687 && ip.src == 10.9.24.101 && dns" | grep "type A" | cut -d " " -f9 | cut -d ":" -f 1 | sort | uniq
+adv.epostoday.uk
+array807.prod.do.dsp.mp.microsoft.com
+array811.prod.do.dsp.mp.microsoft.com
+cp801.prod.do.dsp.mp.microsoft.com
+disc801.prod.do.dsp.mp.microsoft.com
+dns.msftncsi.com
+edge.microsoft.com
+geo.prod.do.dsp.mp.microsoft.com
+kv801.prod.do.dsp.mp.microsoft.com
+localdomain.localdomain
+v10.events.data.microsoft.com
+wpad.localdomain
+www.bing.com
+```
 
 ---
 ### Windows Event Logs
