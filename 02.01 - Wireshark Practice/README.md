@@ -11,6 +11,7 @@ Please note that I used both the file `suspicious.pcap`, downloaded from above U
 #### Question 1 - What type of objects can be exported from this PCAP? - Answer: `http`
 The Wireshark “Export objects” functionality finds only HTTP exportable objects:
 ![Wireshark "Export" HTTP Object list](imgs/wireshark.png)
+
 Interestingly enough there are 2 `app.php` files of different sizes. `Diff`ing the two files it is possible to observe a base64 encoded payload.
 
 
