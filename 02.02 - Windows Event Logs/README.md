@@ -3,67 +3,38 @@
 ### Windows Event Logs
 Difficulty: :christmas_tree::christmas_tree:
 
-Use the Wireshark Phishing terminal in the Tolkien Ring to solve the mysteries around the [suspicious PCAP](https://storage.googleapis.com/hhc22_player_assets/suspicious.pcap). Get hints for this challenge by typing hint in the upper panel of the terminal.
+Investigate the Windows [event log](https://storage.googleapis.com/hhc22_player_assets/powershell.evtx) mystery in the terminal or offline. Get hints for this challenge by typing
+hint in the upper panel of the Windows Event Logs terminal.
 
-### Solution
-Please note that I used both the file `suspicious.pcap`, downloaded from above URL, and `pcap_challenge.pcap`, present inside the terminal. Their `md5` hashes match and are `f0450df7d1bf6e695f80a61259083307`.
+#### Hints
+* Built-In Hints
+** From: Sparkle Redberry
+** The hardest steps in this challenge have hints. Just type `hint` in the top panel!
+* Event Logs Exposé
+** From: Sparkle Redberry
+** New to Windows event logs? Get a jump start with [Eric's talk](https://youtu.be/5NZeHYPMXAE)!
 
-#### Question 1 - What type of objects can be exported from this PCAP? - Answer: `http`
-The Wireshark “Export objects” functionality finds only HTTP exportable objects:
-![Wireshark "Export" HTTP Object list](imgs/wireshark.png)
+#### Solution
+Please note that I used `evtx_dump.py`([python-evtx](https://pypi.org/project/python-evtx/)) to convert logs in a more readable format, the filename that will be used in commands is `powershell.evtx.dump`.
 
-Interestingly enough there are 2 `app.php` files of different sizes. `Diff`ing the two files it is possible to observe a base64 encoded payload.
-
-#### Question 2 - What is the file name of the largest file we can export? - Answer: `app.php`
-Wireshark’s “Export HTTP object list” window also shows filenames.
-
-#### Question 3 - What packet number starts that app.php file? - Answer: `687`
-Wireshark’s “Export HTTP object list” window also shows the initial packet for the file download.
-
-#### Question 4 - What is the IP of the Apache server? - Answer: `192.185.57.242`
-Filter on the packet number and get the source IP:
+##### Question 1 - What month/day/year did the attack take place? - Answer: `12/24/2022`
+Assuming there were multiple actions via PowerShell during the attack, I counted the number of logs by date and sorted by amount of logs with below command:
 ```bash
-elf@2c6b9deef396:~$ tshark -r pcap_challenge.pcap -T fields -e ip.src "frame.number == 687"
-192.185.57.242
+thedead@dellian:~$ for i in $(grep "TimeCreated" powershell.evtx.dump | cut -d '"' -f 2 | cut -d " " -f 1 | sort | uniq); do a=$(grep "$i" powershell.evtx.dump | wc -l) && echo -e "$a\t$i"; done | sort -rn
+3540	2022-12-24
+2811	2022-12-23
+2088	2022-12-13
+1422	2022-11-19
+240	2022-11-11
+181	2022-12-04
+46	2022-10-13
+36	2022-12-18
+36	2022-11-26
+34	2022-11-01
 ```
-
-#### Question 5 - What file is saved to the infected host? - Answer: `Ref_Sept24-2020.zip`
-By analyzing the modified `app.php` it is possible to notice that some JS code was added. This chunk of code contains a base64 encoded payload that gets decoded and downloaded with abovementioned filename:
-```js
-saveAs(blob1, 'Ref_Sept24-2020.zip');
-```
-The zip file contains a file named `Ref_Sept24-2020.scr` which is recognized by [multiple AV solutions](https://www.virustotal.com/gui/file/fad001d463e892e7844040cabdcfa8f8431c07e7ef1ffd76ffbd190f49d7693d) as being `Dridex` malware.
-
-#### Question 6 - Attackers used bad TLS certificates in this traffic. Which countries were they registered to? - Answer: `Irelan, Israel, South Sudan`
-It is possible to extract all the countries with `tshark` and some commands:
-```bash
-elf@2c6b9deef396:~$ tshark -r pcap_challenge.pcap -V | grep "DNSequence item: 1 item (id-at-countryName=" | cut -d = -f 2 | cut -d ")" -f1 | sort | uniq
-IE
-IL
-SS
-US
-```
-These four countries map to: IE ➤ Ireland, IL ➤ Israel, SS ➤ South Sudan, US ➤ United States. At this
-point it is enough to order them excluding the pretty obvious “United States” from the list.
-
-#### Question 7 - Is the host infected (Yes/No)? - Answer: `Yes`
-It is possible to observe that after the malicious content is retrieved, the host does a connection to `adv.epostoday.uk` which is a [known Dridex IOC](https://github.com/Esox-Lucius/PiHoleblocklists/blob/main/Dridex%20IOCs%20-%20Domains%20%26%20Hosts):
-```bash
-elf@2c6b9deef396:~$ tshark -r pcap_challenge.pcap -V "frame.number > 687 && ip.src == 10.9.24.101 && dns" | grep "type A" | cut -d " " -f9 | cut -d ":" -f 1 | sort | uniq
-adv.epostoday.uk
-array807.prod.do.dsp.mp.microsoft.com
-array811.prod.do.dsp.mp.microsoft.com
-cp801.prod.do.dsp.mp.microsoft.com
-disc801.prod.do.dsp.mp.microsoft.com
-dns.msftncsi.com
-edge.microsoft.com
-geo.prod.do.dsp.mp.microsoft.com
-kv801.prod.do.dsp.mp.microsoft.com
-localdomain.localdomain
-v10.events.data.microsoft.com
-wpad.localdomain
-www.bing.com
-```
+The hardest part in this question was realizing that `2022-12-24` was the right answer in the wrong format :smile:
+![date_format](imgs/date_format.jpg)
+[https://devrant.com/rants/1791863/a-perfect-date-for-a-programmer](https://devrant.com/rants/1791863/a-perfect-date-for-a-programmer)
 
 ---
 ## Recover the Tolkien Ring
