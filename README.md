@@ -130,8 +130,7 @@ to previous years, most objectives felt kinda easier while the Glamtariel's Foun
 CTF side. I must admit I missed Jack, but now I’ll just be looking forward to next year’s adventure!
 
 ### The Victors shop
-Just to add a note that it exists and Eve Snowshoes told me it is at [https://my-store-d61669.creator-spring.com/](Just to add a note that it exists and Eve Snowshoes told me it is at
-https://my-store-d61669.creator-spring.com/)!
+Just to add a note that it exists and Eve Snowshoes told me it is at [https://my-store-d61669.creator-spring.com/](https://my-store-d61669.creator-spring.com/)!
 ![victors_shop](imgs/victors_shop.png)
 
 ### Inbox (1)
