@@ -8,11 +8,11 @@ Get your bearings at KringleCon
 4. **Use the terminal**: Click the computer terminal
 
 ### (Kind of) Solution
-- The Elf: ![jingle](imgs/JingleRingford.png)  
-- The Badge: ![badge](imgs/badge_base.png)  
-- The Wallet Address: ```0x4a831cfc7fD1A983b4AF04CfbF5da984bD6f7E7E```
-- The Terminal: ![cranpi](imgs/cranpi.png)
-- The Santa: ![santa](imgs/santa.png)
+* The Elf: ![jingle](imgs/JingleRingford.png)  
+* The Badge: ![badge](imgs/badge_base.png)  
+* The Wallet Address: ```0x4a831cfc7fD1A983b4AF04CfbF5da984bD6f7E7E```
+* The Terminal: ![cranpi](imgs/cranpi.png)
+* The Santa: ![santa](imgs/santa.png)
 
 ---
 ## Recover the Tolkien Ring
