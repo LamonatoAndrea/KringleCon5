@@ -79,7 +79,9 @@ thedead@dellian:~$ grep '<Data Name="ScriptBlockText"' powershell.evtx.dump | gr
 
 ##### Question 7 - Was the original file (from question 2) deleted? - Answer: `No`
 To be fair, no-think 50% chance :)
+
 ![50_percent](imgs/50_percent.jpg)
+
 [http://www.quickmeme.com/meme/3stmyl](http://www.quickmeme.com/meme/3stmyl)
 
 ##### Question 8 - What is the Event ID of the logs that show the actual command lines the attacker typed and ran? - Answer: `4104`
