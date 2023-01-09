@@ -95,7 +95,6 @@ As per previous question, it was possible to identify the substitution of `honey
 
 ---
 ## Recover the Tolkien Ring
-### Windows Event Logs
 ### Suricata Regatta
 ### The Tolkien Ring
 ## Recover the Elfen Ring
