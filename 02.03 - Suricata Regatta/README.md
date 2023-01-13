@@ -33,9 +33,7 @@ alert pkthdr any any -> any any (msg:"SURICATA IPv4 total length smaller than he
 alert udp any any -> any 123 (msg:"ET DOS Possible NTP DDoS Inbound Frequent Un-Authed GET_RESTRICT Requests IMPL 0x02"; content:"|00 02 10|"; offset:1; depth:3; byte_test:1,!&,128,0; byte_test:1,&,4,0; byte_test:1,&,2,0; byte_test:1,&,1,0; threshold: type both,track by_dst,count 2,seconds 60; classtype:attempted-dos; sid:2019021; rev:3; metadata:created_at 2014_08_26, updated_at 2014_08_26;)
 ```
 
-The challenge requires 4 alert rules: DNS lookups to adv.epostoday.uk , HTTP traffic to 192.185.57.242 ,
-traffic where the Certificate subject is eardbellith.Icanwepeh.nagoya and gzip -ed HTTP response
-containing let byteCharacters = atob within the body. Below the 4 rules I used in the above order:
+The challenge requires 4 alert rules: DNS lookups to `adv.epostoday.uk`, HTTP traffic to `192.185.57.242`, traffic where the Certificate subject is `eardbellith.Icanwepeh.nagoya` and `gzip`-ed HTTP response containing `let byteCharacters = atob` within the body. Below the 4 rules I used in the above order:
 ```bash
 alert dns any any -> any any (msg:"Known bad DNS lookup, possible Dridex infection"; dns.query; content:"adv.epostoday.uk"; nocase; sid:1; rev:1;)
 ```
