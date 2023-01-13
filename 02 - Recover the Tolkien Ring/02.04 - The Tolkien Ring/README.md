@@ -2,6 +2,7 @@
 ## Recover the Tolkien Ring
 ### The Tolkien Ring
 Just to take a good look at the Tolkien Ring recovered from previous challenges :)
+
 ![tolkien_ring](/imgs/tolkien_ring.png)
 
 ---
