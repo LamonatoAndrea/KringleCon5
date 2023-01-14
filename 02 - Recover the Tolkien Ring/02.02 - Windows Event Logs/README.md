@@ -7,12 +7,13 @@ Investigate the Windows [event log](https://storage.googleapis.com/hhc22_player_
 hint in the upper panel of the Windows Event Logs terminal.
 
 #### Hints
-	*Built-In Hints*  
-	From: Sparkle Redberry  
-	The hardest steps in this challenge have hints. Just type `hint` in the top panel!
-* Event Logs Exposé
-	* From: Sparkle Redberry
-	* New to Windows event logs? Get a jump start with [Eric's talk](https://youtu.be/5NZeHYPMXAE)!
+**Built-In Hints**  
+*From: Sparkle Redberry*  
+The hardest steps in this challenge have hints. Just type `hint` in the top panel!  
+
+**Event Logs Exposé**  
+*From: Sparkle Redberry*  
+New to Windows event logs? Get a jump start with [Eric's talk](https://youtu.be/5NZeHYPMXAE)!
 
 #### Solution
 Please note that I used `evtx_dump.py`([python-evtx](https://pypi.org/project/python-evtx/)) to convert logs in a more readable format, the filename that will be used in commands is `powershell.evtx.dump`.
