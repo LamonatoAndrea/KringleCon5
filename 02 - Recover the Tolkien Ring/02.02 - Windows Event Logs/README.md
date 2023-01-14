@@ -8,7 +8,7 @@ hint in the upper panel of the Windows Event Logs terminal.
 
 #### Hints
 * Built-In Hints
-** From: Sparkle Redberry
+* * ** From: Sparkle Redberry
 ** The hardest steps in this challenge have hints. Just type `hint` in the top panel!
 * Event Logs Exposé
 ** From: Sparkle Redberry
