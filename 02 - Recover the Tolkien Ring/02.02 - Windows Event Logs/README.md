@@ -7,9 +7,9 @@ Investigate the Windows [event log](https://storage.googleapis.com/hhc22_player_
 hint in the upper panel of the Windows Event Logs terminal.
 
 #### Hints
-*Built-In Hints*  
-From: Sparkle Redberry  
-The hardest steps in this challenge have hints. Just type `hint` in the top panel!
+	*Built-In Hints*  
+	From: Sparkle Redberry  
+	The hardest steps in this challenge have hints. Just type `hint` in the top panel!
 * Event Logs Exposé
 	* From: Sparkle Redberry
 	* New to Windows event logs? Get a jump start with [Eric's talk](https://youtu.be/5NZeHYPMXAE)!
