@@ -43,8 +43,8 @@ grinchum-land:~$ cat /mnt/home/jailer/.ssh/jail.key.priv | tail -n 11 | head -n 
 " -f 11
 082bb339ec19de4935867
 ```
-The solution is the string `082bb339ec19de4935867` in the above output.
-![root](imgs/root.png)
+The solution is the string `082bb339ec19de4935867` in the above output.  
+![root](imgs/root.png)  
 [https://imgur.com/sQOrznY](https://imgur.com/sQOrznY)
 
 ---
