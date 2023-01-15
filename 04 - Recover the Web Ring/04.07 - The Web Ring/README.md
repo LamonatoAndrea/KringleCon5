@@ -6,19 +6,6 @@ Just to take a good look at the Web Ring recovered from previous challenges :)
 ![web_ring](/imgs/web_ring.png)
 
 ---
-## Recover the Elfen Ring
-### Clone with a Difference
-### Prison Escape
-### Jolly CI/CD
-### The Elfen Ring
-## Recover the Web Ring
-### Naughty IP
-### Credential Mining
-### 404 FTW
-### IMDS, XXE, and Other Abbreviations
-### Open Boria Mine Door
-### Glamtariel's Fountain
-### The Web Ring
 ## Recover the Cloud Ring
 ### AWS CLI Intro
 ### Trufflehog Search
