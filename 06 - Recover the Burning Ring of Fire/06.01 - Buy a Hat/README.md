@@ -21,7 +21,7 @@ You should have been given a target address and a price by the Hat Vending machi
 Just pick a hat from [https://prod-hats-vending.kringle.co.in/](https://prod-hats-vending.kringle.co.in/), different hats have different addresses to send the KringleCoins to. I bought [![tophat3_houndstooth](imgs/tophat3_houndstooth_small.png)](imgs/tophat3_houndstooth.png) because, why not?
 Pre-approved a 10KC transaction to `0x5251D7091fA38DbE398dd6a860FA510dA3ABAE01` and then went to the hat vending machine, given the wallet address and the hat ID `273`.
 
-##### Solution
+##### That special hat!
 After losing myself 10+ times in the wall I was finally able to obtain that one hat to rule them all, the one hat to find them, the one hat to exploit them and in the darkness [meterpreter](https://media.tenor.com/z6X-NO4N6TwAAAAd/metasploit-meterpreter.gif) them.  
 ![tophat1_dimitri](imgs/tophat1_dimitri.png)
 
