@@ -114,7 +114,7 @@ grinchum-land:~$ echo "PqBj2tDq9NBdTUkbZBriAAAAFHNwb3J4QGtyaW5nbGVjb24uY29tAQ=="
 grinchum-land:~$ echo "-----END OPENSSH PRIVATE KEY-----" >> ~/.ssh/id_rsa
 grinchum-land:~$ chmod 600 ~/.ssh/id_rsa
 grinchum-land:~$ git clone git@gitlab.flag.net.internal:rings-of-powder/wordpress.flag.net.internal.git
-The authenticity of host 'gitlab.flag.net.internal (172.18.0.150)' can't be established.
+The authenticity of host 'gitlab.flag.net.internal (172.18.0.150)' can\'t be established.
 ED25519 key fingerprint is SHA256:jW9axa8onAWH+31D5iHA2BYliy2AfsFNaqomfCzb2vg.
 This key is not known by any other names
 Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
