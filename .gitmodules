@@ -4,3 +4,6 @@
 [submodule "03 - Recover the Elfen Ring/03.01 - Clone with a Difference/aws_scripts"]
 	path = 03 - Recover the Elfen Ring/03.01 - Clone with a Difference/aws_scripts
 	url = http://haugfactory.com/orcadmin/aws_scripts.git
+[submodule "05 - Recover the Cloud Ring/05.02 - Trufflehog Search/aws_scripts"]
+	path = 05 - Recover the Cloud Ring/05.02 - Trufflehog Search/aws_scripts
+	url = https://haugfactory.com/orcadmin/aws_scripts
