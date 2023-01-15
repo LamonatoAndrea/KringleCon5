@@ -48,6 +48,34 @@ The response is a JSON with following contents:
 }
 ```
 ###### Timeouts, MiniLembanh and `x-grinchum`
+After a certain time of inactivity or when tampering with either `MiniLembanh` in the cookie or with `x-grinchum` in the header, the response changes to:
+```js
+{
+  "appResp": "Trying to TAMPER with Kringle's favorite cookie recipe or the entrance tickets can't help you Grinchum! I'm not sure what you are looking for but it isn't here! Get out!^Miserable trickster! Please click him out of here.",
+  "droppedOn": "none",
+  "visit": "static/images/grinchum-supersecret_9364274.png,265px,135px"
+}
+```
+The url [`static/images/grinchum-supersecret_9364274.png,265px,135px`](https://glamtarielsfountain.com/static/images/grinchum-supersecret_9364274.png,265px,135px) points to an image of Grinchum that appears in the middle of the page:  
+![grinchum](imgs/grinchum.png)
+
+If `MiniLembanh` or `x-grinchum` are empty the `appResp` value will be `Looks like you're missing your entrance ticket or a snack to keep healthy!^No ticket, no snack! No snack, go hungry!`.
+
+###### Talking XML
+The hints about XXE, XML and the `json` string inside the `reqType` parameter of requests to the `/dropped` endpoint led me to believe that there was probably some way to use XML in the request. I then tried to tamper with `reqType` obtaining an interesting result:
+```bash
+thedead@dellian:~$ curl 'https://glamtarielsfountain.com/dropped' -H 'content-type: application/json' -H 'cookie: GCLB="f33ca6b7059dae9e"; MiniLembanh=92e5692a-1ee2-4cc3-a63f-9f09b93d86d5.bVEu0CJqEUxHfrGhihz2JwwknLg' -H 'x-grinchum: ImFiMjA1ZDUxYmViZDJhYjI2ZTc0NjgwOTc5N2QzNmY1ODFhZDJmOWMi.Y7MgIw.zSuYkAmF_mB2FRHwVvQPiB5aOBI' --data-raw '{"imgDrop":"img2","who":"princess","reqType":"xml"}'
+{
+  "appResp": "We don't speak that way very often any more. Once in a while perhaps, but only at certain times.^I don't hear her use that very often. I think only for certain TYPEs of thoughts.",
+  "droppedOn": "none",
+  "visit": "none"
+}
+```
+
+
+
+
+
 
 ---
 ## Recover the Web Ring
