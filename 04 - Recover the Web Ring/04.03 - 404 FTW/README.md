@@ -20,7 +20,6 @@ The answer is the first URL identified: `/proc`.
 
 ---
 ## Recover the Web Ring
-
 ### IMDS, XXE, and Other Abbreviations
 ### Open Boria Mine Door
 ### Glamtariel's Fountain
