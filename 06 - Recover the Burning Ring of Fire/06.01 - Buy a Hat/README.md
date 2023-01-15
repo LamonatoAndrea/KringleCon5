@@ -1,5 +1,5 @@
 # SANS Holiday Hack Challenge 2022 - KringleCon V: Golden Rings
-## Recover the Cloud Ring
+## Recover The Burning Ring of Fire
 ### Buy a Hat
 Difficulty: :christmas_tree::christmas_tree:  
 Travel to the Burning Ring of Fire and purchase a hat from the vending machine with KringleCoin. Find hints for this objective hidden throughout the tunnels.

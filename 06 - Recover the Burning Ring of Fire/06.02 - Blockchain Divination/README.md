@@ -1,6 +1,6 @@
 # SANS Holiday Hack Challenge 2022 - KringleCon V: Golden Rings
-## Recover the Cloud Ring
-### Buy a Hat
+## Recover The Burning Ring of Fire
+### Blockchain Divination
 Difficulty: :christmas_tree::christmas_tree::christmas_tree::christmas_tree:  
 Use the Blockchain Explorer in the Burning Ring of Fire to investigate the contracts and transactions on the chain. At what address is the KringleCoin smart contract deployed? Find hints for this objective hidden throughout the tunnels.
 
