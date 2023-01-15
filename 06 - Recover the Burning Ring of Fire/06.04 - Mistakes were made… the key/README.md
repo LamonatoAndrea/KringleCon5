@@ -3,7 +3,7 @@
 ### Mistakes were made... the key
 While I was re-doing the challenges, I lost my key at a certain point… I went on Discord and noticed I was not the only one on the naughty list. I then followed the hint of looking for a helpful soul above the ground and ended up in a secret chamber behind the castle. There I met the Santa Magic!
 There I had to prove myself to Santa. I went on a lonely quest:
-* Found [Yukon Cornelius](), and helped him track down a [Bumble]U+00B9.
+* Found [Yukon Cornelius](), and helped him track down a [Bumble]¹.
 Took a tooth from the Bumble and carried it deep into the Misty Mountains, and traded it with Gwairhair, Windlord of the Great Eagles, for one of his feathers.
 I had to show all my Social Engineering competences to convince Gwairhair to trade as he didn’t believe that I was sent from Santa himself.
 Once the feather was obtained, I climbed the walls of Sombertown to find the home of Burgermeister Meisterburger.
