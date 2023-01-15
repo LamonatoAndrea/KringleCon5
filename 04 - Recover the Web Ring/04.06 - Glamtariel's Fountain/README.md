@@ -1,7 +1,7 @@
 # SANS Holiday Hack Challenge 2022 - KringleCon V: Golden Rings
 ## Recover the Web Ring
 ### Open Boria Mine Door
-Difficulty: :christmas_tree::christmas_tree::christmas_tree::christmas_tree::christmas_tree:
+Difficulty: :christmas_tree::christmas_tree::christmas_tree::christmas_tree::christmas_tree:  
 Stare into Glamtariel's fountain and see if you can find the ring! What is the filename of the ring she presents you? Talk to Hal Tandybuck in the Web Ring for hints.
 
 #### Hints
