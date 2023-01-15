@@ -7,3 +7,6 @@
 [submodule "05 - Recover the Cloud Ring/05.02 - Trufflehog Search/aws_scripts"]
 	path = 05 - Recover the Cloud Ring/05.02 - Trufflehog Search/aws_scripts
 	url = https://haugfactory.com/orcadmin/aws_scripts
+[submodule "06 - Recover the Burning Ring of Fire/06.03 - Exploit a Smart Contract/Merkle_Trees"]
+	path = 06 - Recover the Burning Ring of Fire/06.03 - Exploit a Smart Contract/Merkle_Trees
+	url = https://github.com/QPetabyte/Merkle_Trees
