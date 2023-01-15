@@ -11,7 +11,7 @@ Find a transaction in the blockchain where someone sent or received KringleCoin!
 
 
 #### Solution
-Probably should’ve read the hint but instead I went the way around :) I assumed the contract would be toward the beginning of the blockchain, so I started from block #0 and easily found the `KringleCoin.sol` contract at block #1:  
+Probably should’ve read the hint but instead I went the way around :) I assumed the contract would be toward the beginning of the blockchain, so I started from block #0 and easily found the [`KringleCoin.sol`](KringleCoin.sol) contract at block #1:  
 ![block1](imgs/block1.png)  
 The contract address is: `0xc27A2D3DE339Ce353c0eFBa32e948a88F1C86554`.
 
