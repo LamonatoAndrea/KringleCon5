@@ -16,9 +16,6 @@ Probably should’ve read the hint but instead I went the way around :) I assume
 The contract address is: `0xc27A2D3DE339Ce353c0eFBa32e948a88F1C86554`.
 
 ---
-## Recover the Burning Ring of Fire
-### Buy a Hat
-### Blockchain Divination
 ### Exploit a Smart Contract
 ### Mistakes were made... the key
 ### The Burning Ring of Fire
