@@ -1,10 +1,8 @@
 # SANS Holiday Hack Challenge 2022 - KringleCon V: Golden Rings
 ## Recover the Tolkien Ring
 ### Windows Event Logs
-Difficulty: :christmas_tree::christmas_tree:
-
-Investigate the Windows [event log](https://storage.googleapis.com/hhc22_player_assets/powershell.evtx) mystery in the terminal or offline. Get hints for this challenge by typing
-hint in the upper panel of the Windows Event Logs terminal.
+Difficulty: :christmas_tree::christmas_tree:  
+Investigate the Windows [event log](https://storage.googleapis.com/hhc22_player_assets/powershell.evtx) mystery in the terminal or offline. Get hints for this challenge by typing hint in the upper panel of the Windows Event Logs terminal.
 
 #### Hints
 ##### Built-In Hints
@@ -32,18 +30,15 @@ thedead@dellian:~$ for i in $(grep "TimeCreated" powershell.evtx.dump | cut -d '
 36	2022-11-26
 34	2022-11-01
 ```
-The hardest part in this question was realizing that `2022-12-24` was the right answer in the wrong format :smile:
-
-![date_format](imgs/date_format.jpg)
-
+The hardest part in this question was realizing that `2022-12-24` was the right answer in the wrong format :smile:  
+![date_format](imgs/date_format.jpg)  
 [https://devrant.com/rants/1791863/a-perfect-date-for-a-programmer](https://devrant.com/rants/1791863/a-perfect-date-for-a-programmer)
 
 ##### Question 2 - An attacker got a secret from a file. What was the original file's name? - Answer: `recipe_updated.txt`
-Searching for `secret` within the dump file allows finding multiple `Get-Content` commands against the file
-`Recipe.txt` and `recipe_updated.txt`, the latter being the answer.
+Searching for `secret` within the dump file allows finding multiple `Get-Content` commands against the file `Recipe.txt` and `recipe_updated.txt`, the latter being the answer.
 
 ##### Question 3 - The contents of the previous file were retrieved, changed, and stored to a variable by the attacker. This was done multiple times. Submit the last full PowerShell line that performed only these actions. - Answer: `$foo = Get-Content .\Recipe| % {$_ -replace 'honey', 'fish oil'}`
-Using the regex \$.*= in grep allows finding variable assignments within events:
+Using the regex `\$.*=` in grep allows finding variable assignments within events:
 ```bash
 thedead@dellian:~$ grep '<Data Name="ScriptBlockText"' powershell.evtx.dump | grep -e "\$.*=" | tail -n 5
 <Data Name="ScriptBlockText">$foo = Get-Content .\Recipe| % {$_ -replace 'honey', 'fish oil'} $foo | Add-Content -Path 'recipe_updated.txt'
@@ -78,10 +73,8 @@ thedead@dellian:~$ grep '<Data Name="ScriptBlockText"' powershell.evtx.dump | gr
 ```
 
 ##### Question 7 - Was the original file (from question 2) deleted? - Answer: `No`
-To be fair, no-think 50% chance :)
-
-![50_percent](imgs/50_percent.jpg)
-
+To be fair, no-think 50% chance :)  
+![50_percent](imgs/50_percent.jpg)  
 [http://www.quickmeme.com/meme/3stmyl](http://www.quickmeme.com/meme/3stmyl)
 
 ##### Question 8 - What is the Event ID of the logs that show the actual command lines the attacker typed and ran? - Answer: `4104`

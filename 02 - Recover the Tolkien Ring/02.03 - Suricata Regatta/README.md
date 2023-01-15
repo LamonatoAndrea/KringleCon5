@@ -1,10 +1,8 @@
 # SANS Holiday Hack Challenge 2022 - KringleCon V: Golden Rings
 ## Recover the Tolkien Ring
 ### Suricata Regatta
-Difficulty: :christmas_tree::christmas_tree::christmas_tree:
-
-Help detect this kind of malicious activity in the future by writing some Suricata rules. Work with Dusty
-Giftwrap in the Tolkien Ring to get some hints.
+Difficulty: :christmas_tree::christmas_tree::christmas_tree:  
+Help detect this kind of malicious activity in the future by writing some Suricata rules. Work with Dusty Giftwrap in the Tolkien Ring to get some hints.
 
 #### Solution
 There are already some rules in the `suricata.rules` file:

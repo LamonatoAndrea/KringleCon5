@@ -1,8 +1,7 @@
 # SANS Holiday Hack Challenge 2022 - KringleCon V: Golden Rings
 ## Recover the Elfen Ring
 ### Clone with a Difference
-Difficulty: :christmas_tree:
-
+Difficulty: :christmas_tree:  
 Clone a code repository. Get hints for this challenge from Bow Ninecandle in the Elfen Ring.
 
 #### Hints

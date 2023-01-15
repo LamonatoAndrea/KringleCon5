@@ -1,17 +1,15 @@
 # SANS Holiday Hack Challenge 2022 - KringleCon V: Golden Rings
 ## Recover the Tolkien Ring
 ### Wireshark Practice
-Difficulty: :christmas_tree:
-
+Difficulty: :christmas_tree:  
 Use the Wireshark Phishing terminal in the Tolkien Ring to solve the mysteries around the [suspicious PCAP](https://storage.googleapis.com/hhc22_player_assets/suspicious.pcap). Get hints for this challenge by typing hint in the upper panel of the terminal.
 
 #### Solution
 Please note that I used both the file `suspicious.pcap`, downloaded from above URL, and `pcap_challenge.pcap`, present inside the terminal. Their `md5` hashes match and are `f0450df7d1bf6e695f80a61259083307`.
 
 ##### Question 1 - What type of objects can be exported from this PCAP? - Answer: `http`
-The Wireshark “Export objects” functionality finds only HTTP exportable objects:
-![Wireshark "Export" HTTP Object list](imgs/wireshark.png)
-
+The Wireshark “Export objects” functionality finds only HTTP exportable objects:  
+![Wireshark "Export" HTTP Object list](imgs/wireshark.png)  
 Interestingly enough there are 2 `app.php` files of different sizes. `Diff`ing the two files it is possible to observe a base64 encoded payload.
 
 ##### Question 2 - What is the file name of the largest file we can export? - Answer: `app.php`
