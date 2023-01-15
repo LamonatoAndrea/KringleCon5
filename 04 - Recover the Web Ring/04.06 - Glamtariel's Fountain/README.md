@@ -16,7 +16,7 @@ Early parts of this challenge can be solved by focusing on Glamtariel's WORDS.
 #### Solution
 ##### Initial assessment
 ###### The game
-The initial page contains 4 draggable images: a candy cane, a Santa, and elf and an ice cube. There are also 2 static images: Glamtariel (aka the Princess) and the Fountain.
+The initial page contains 4 draggable images: a candy cane![candyCane](imgs/candyCane.png), a Santa![santa](imgs/santa.png), an elf![elf](imgs/elf.png) and an ice cube![iceCube](imgs/iceCube.png). There are also 2 static images: Glamtariel (aka the Princess)![princess](imgs/princess.png) and the Fountain![fountain](imgs/fountain.png).
 By dragging the first set of images in different parts of the background the Fountain and the Princess will reply with a specific message. The JS scripts behind the images also change and get reloaded with a newversion followed by the timestamp (e.g. images-1672661334202.js where is the output of (new Date()).getTime(); ). Images can be dropped on the Fountain, the Princess, both or none of them. When the whole set of images has been dropped on both the Fountain and the Princess, the draggable images change. The second set of draggable images is: a ring, a boat, an igloo and a star. When the silver ring is dragged on top of the fountain the “ominous” eye appears and has to be clicked away to proceed. When the whole second set of images has been dropped on both the Fountain and the Princess, a third set appears. The third set is: two blue rings, a silver ring and a red ring.
 
 ---
