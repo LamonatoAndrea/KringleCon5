@@ -1,4 +1,4 @@
-## [thedead@dellian:~$ whoami](/README.md)
+## [thedead@dellian:~$ whoami](/README.md#thedeaddellian-whoami)
 ## [KringleCon Orientation](/01%20-%20KringleCon%20Orientation/README.md)
 ## [Wireshark Practice (Recover the Tolkien Ring)](/02%20-%20Recover%20the%20Tolkien%20Ring/02.01%20-%20Wireshark%20Practice/README.md)
 ## [Windows Event Logs (Recover the Tolkien Ring)](/02%20-%20Recover%20the%20Tolkien%20Ring/02.02%20-%20Windows%20Event%20Logs/README.md)
@@ -24,5 +24,5 @@
 ## [Exploit a Smart Contract (Recover the Burning Ring of Fire)](/06%20-%20Recover%20the%20Burning%20Ring%20of%20Fire/06.03%20-%20Exploit%20a%20Smart%20Contract/README.md)
 ## [Mistakes were made… the key (Recover the Burning Ring of Fire)](/06%20-%20Recover%20the%20Burning%20Ring%20of%20Fire/06.04%20-%20Mistakes%20were%20made…%20the%20key/README.md)
 ## [The Burning Ring of Fire (Recover the Burning Ring of Fire)](/06%20-%20Recover%20the%20Burning%20Ring%20of%20Fire/06.05%20-%20The%20Burning%20Ring%20of%20Fire/README.md)
-## [Narrative](/README.md)
-## [Conclusions](/README.md)
+## [Narrative](/README.md#narrative)
+## [Conclusions](/README.md#conclusions)
