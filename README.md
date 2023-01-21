@@ -46,8 +46,6 @@ Hopefully, your worst one-liner of the season:
 ### Suricata Regatta
 
 ### The Tolkien Ring
-Just to take a good look at the Tolkien Ring recovered from previous challenges :)  
-![tolkien_ring](imgs/tolkien_ring.png)
 
 ## Recover the Elfen Ring
 
@@ -58,8 +56,6 @@ Just to take a good look at the Tolkien Ring recovered from previous challenges 
 ### Jolly CI/CD
 
 ### The Elfen Ring
-Just to take a good look at the Elfen Ring recovered from previous challenges :)  
-![elfen_ring](imgs/elfen_ring.png)
 
 ## Recover the Web Ring
 
@@ -76,8 +72,6 @@ Just to take a good look at the Elfen Ring recovered from previous challenges :)
 ### Glamtariel's Fountain
 
 ### The Web Ring
-Just to take a good look at the Web Ring recovered from previous challenges :)  
-![web_ring](imgs/web_ring.png)
 
 ## Recover the Cloud Ring
 
@@ -88,8 +82,6 @@ Just to take a good look at the Web Ring recovered from previous challenges :)
 ### Exploitation via AWS CLI
 
 ### The Cloud Ring
-Just to take a good look at the Cloud Ring recovered from previous challenges :)  
-![cloud_ring](imgs/cloud_ring.png)
 
 ## Recover the Burning Ring of Fire
 
@@ -102,8 +94,6 @@ Just to take a good look at the Cloud Ring recovered from previous challenges :)
 ### Mistakes were made... the key
 
 ### The Burning Ring of Fire
-Just to take a good look at the Burning Ring of Fire recovered from previous challenges :)  
-![brof_ring](imgs/brof.png)
 
 ## Narrative
 *Five Rings for the Christmas king immersed in cold*
