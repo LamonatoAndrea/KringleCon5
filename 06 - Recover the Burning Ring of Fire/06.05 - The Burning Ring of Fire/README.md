@@ -2,7 +2,7 @@
 ## Recover the Burning Ring of Fire
 ### The Burning Ring of Fire
 Just to take a good look at The Burning Ring of Fire recovered from previous challenges :)  
-![brof](/imgs/brof.png)
+![brof](imgs/brof.png)
 
 ---
 ### [Narrative](/README.md#narrative)

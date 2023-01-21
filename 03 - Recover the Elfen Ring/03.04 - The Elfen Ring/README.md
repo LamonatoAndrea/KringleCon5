@@ -3,7 +3,7 @@
 ### The Elfen Ring
 Just to take a good look at the Elfen Ring recovered from previous challenges :)
 
-![elfen_ring](/imgs/elfen_ring.png)
+![elfen_ring](imgs/elfen_ring.png)
 
 ---
 ### [Naughty IP (Recover the Web Ring)](/04%20-%20Recover%20the%20Web%20Ring/04.01%20-%20Naughty%20IP/README.md)

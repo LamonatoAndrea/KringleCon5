@@ -3,7 +3,7 @@
 ### The Web Ring
 Just to take a good look at the Web Ring recovered from previous challenges :)
 
-![web_ring](/imgs/web_ring.png)
+![web_ring](imgs/web_ring.png)
 
 ---
 ### [AWS CLI Intro (Recover the Cloud Ring)](/05%20-%20Recover%20the%20Cloud%20Ring/05.01%20-%20AWS%20CLI%20Intro/README.md)

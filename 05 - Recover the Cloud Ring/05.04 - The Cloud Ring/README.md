@@ -2,7 +2,7 @@
 ## Recover the Cloud Ring
 ### The Cloud Ring
 Just to take a good look at the Cloud Ring recovered from previous challenges :)  
-![cloud_ring](/imgs/cloud_ring.png)
+![cloud_ring](imgs/cloud_ring.png)
 
 ---
 ### [Buy a Hat (Recover the Burning Ring of Fire)](/06%20-%20Recover%20the%20Burning%20Ring%20of%20Fire/06.01%20-%20Buy%20a%20Hat/README.md)

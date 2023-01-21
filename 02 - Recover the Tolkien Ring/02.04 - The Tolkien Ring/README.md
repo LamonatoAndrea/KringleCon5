@@ -3,7 +3,7 @@
 ### The Tolkien Ring
 Just to take a good look at the Tolkien Ring recovered from previous challenges :)
 
-![tolkien_ring](/imgs/tolkien_ring.png)
+![tolkien_ring](imgs/tolkien_ring.png)
 
 ---
 ### [Clone with a Difference (Recover the Elfen Ring)](/03%20-%20Recover%20the%20Elfen%20Ring/03.01%20-%20Clone%20with%20a%20Difference/README.md)
