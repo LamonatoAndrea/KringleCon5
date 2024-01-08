@@ -32,7 +32,7 @@ Hopefully, your worst one-liner of the season:
 
 ### Super Honorable Mention
 I got myself a [Super Honorable Mention](https://www.sans.org/mlp/holiday-hack-challenge-2022/winners-and-answers/) submitting the writeup for this challenge, thank you guys!
-![super honorable mention](super_honorable_mention.png)
+![super honorable mention](imgs/super_honorable_mention.png)
 
 ## [KringleCon Orientation](/01%20-%20KringleCon%20Orientation/README.md)
 
