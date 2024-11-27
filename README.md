@@ -128,6 +128,3 @@ answer and you’ll get it as soon as this report is uploaded. Who's “you”? 
 be a hint on that, the other a response :)
 ![minions_bye](imgs/minions_bye.png)
 ![missed_email](imgs/missed_email.jpeg)
-
-
-<meta name="google-site-verification" content="WVrHiUUSzoW-pGHKy88jn2aU390DpbC9i0BxdDc7mH0" />
