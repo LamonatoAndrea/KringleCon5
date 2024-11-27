@@ -1,3 +1,4 @@
+<meta name="google-site-verification" content="WVrHiUUSzoW-pGHKy88jn2aU390DpbC9i0BxdDc7mH0" />
 # SANS Holiday Hack Challenge 2022 - KringleCon V: Golden Rings
 
 ## thedead@dellian:~$ whoami
